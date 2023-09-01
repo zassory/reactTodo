@@ -9,6 +9,7 @@ const Todo = () => {
                 Todo Item
             </p>
         </div>        
+        <img className="h-5 w-5 cursor-pointer transition-all duration-300 ease-in" src="/close-icon.svg" alt="Close Icon" />
     </div>
   )
 }
