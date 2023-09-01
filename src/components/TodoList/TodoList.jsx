@@ -2,7 +2,15 @@ import { TodoFilters } from "../TodoFilters/TodoFilters"
 import { Todo } from "../Todo/Todo";
 
 
-const TodoList = ({ todos , handleSetComplete , handleDelete }) => {
+const TodoList = ({ 
+    todos ,
+    handleSetComplete , 
+    handleDelete ,
+    activeFilter ,
+    handleClearComplete , 
+    showAllTodos ,
+    showActiveTodos , 
+    showCompletedTodos}) => {
   return (
     <div className="flex flex-col mt-7 rounded-lg overflow-hidden shadow-2xl">
         {todos.map(todo => {
@@ -15,7 +23,14 @@ const TodoList = ({ todos , handleSetComplete , handleDelete }) => {
             />
           )
         })}
-        <TodoFilters />
+        <TodoFilters 
+          activeFilter={activeFilter}
+          total={todos.length}
+          handleClearComplete = {handleClearComplete}
+          showAllTodos={showAllTodos}
+          showActiveTodos = {showActiveTodos}
+          showCompletedTodos = {showCompletedTodos}
+        />
     </div>
   )
 }
